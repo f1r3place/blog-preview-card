@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+h1 {
+    line-height: 1;
+}
+
+/* custom properties */
+
+:root {
+    --clr-primary: hsl(47, 88%, 63%);
+
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-neutral-500: hsl(0, 0%, 42%);
+    --clr-neutral-900: hsl(0, 0%, 7%);
+
+    --fw-base: 500;
+    --fw-accent: 900;
+}
+
+.grid-less-spacing {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.focusable {
+    transition: color 0.1s ease 0s;
+}
+
+.focusable:is(:focus, :hover) {
+    color: var(--clr-primary);
+    cursor: pointer;
+}
+
+/* general styles */
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Figtree", sans-serif;
+    font-size: 16px;
+    background-color: var(--clr-primary);
+}
+
+.preview {
+    width: 350px;
+    padding: 1.5rem;
+    background-color: var(--clr-neutral-100);
+    border: solid 1px black;
+    border-radius: 1em;
+    display: grid;
+    gap: 1.25em;
+    box-shadow: 8px 8px 0px var(--clr-neutral-900);
+}
+
+.preview img {
+    border-radius: 0.75rem;
+}
+
+.preview__tag {
+    background-color: var(--clr-primary);
+    align-self: start;
+    justify-self: start;
+    padding: 0.3em 1em;
+    border-radius: 0.3em;
+    font-weight: var(--fw-accent);
+}
+
+.preview h1 {
+    font-weight: var(--fw-accent);
+    font-size: 1.35rem;
+}
+
+
+.preview__description {
+    color: var(--clr-neutral-500);
+}
+
+.preview__author {
+    font-weight: var(--fw-accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.preview__author::before {
+    content: '';
+    background-image: url("./assets/images/image-avatar.webp");
+    background-size: cover;
+    width: 2rem;
+    height: 2rem;
+}
